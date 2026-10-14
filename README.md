@@ -15,6 +15,14 @@ Abra http://localhost:8082 e clique em **Iniciar partida**. A IA vem ativada. Pa
 
 É necessária conexão com a internet para carregar TensorFlow.js **4.22.0** do jsDelivr. Se o carregamento falhar, o modo manual continua disponível; recarregue a página para tentar a IA novamente. Use HTTP, não abra o HTML com `file://`.
 
+## GitHub Pages
+
+O GitHub Pages publica os arquivos estáticos a cada push em `main`, sem compilação. Em **Settings → Pages**, a origem é **Deploy from a branch**, branch **main**, pasta **/ (root)**. O arquivo `.nojekyll` desativa o processamento Jekyll. Este repositório é público para permitir Pages no plano atual.
+
+Jogue em: https://iamgriffon.github.io/hacked-whackamole/
+
+O servidor Node é usado apenas no desenvolvimento local. No Pages, o jogo e o worker rodam no navegador; o TensorFlow.js continua sendo carregado pelo CDN.
+
 ## O que significa vencer
 
 O original acumula pontos por 30 segundos, sem vitória ou derrota explícita. Aqui, vitória perfeita significa acertar **todas as toupeiras que apareceram**, sem nenhuma perda. Cada acerto vale 10 pontos, cada alvo fica disponível por 1500 ms e o sprite acertado permanece por 500 ms. Não há pontos extras por clicar repetidamente.
