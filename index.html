@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whack-a-Mole · TensorFlow.js</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">EXEMPLO 02 / PARTE 2</p><h1>Whack-a-Mole</h1><p>Uma IA que vê o tabuleiro e joga com TensorFlow.js.</p></header>
+    <section class="stats" aria-label="Placar">
+      <div>Pontos<strong id="score">0</strong></div><div>Tempo<strong id="time">30s</strong></div>
+      <div>Acertos<strong id="hits">0</strong></div><div>Perdidas<strong id="misses">0</strong></div>
+    </section>
+    <div class="game-layout">
+      <div class="board-wrap">
+        <canvas id="board" width="432" height="432" tabindex="0" aria-label="Tabuleiro com nove buracos. No modo manual, use as teclas de 1 a 9 ou clique."></canvas>
+        <div id="aim" aria-hidden="true" hidden></div>
+      </div>
+      <aside>
+        <h2>Piloto automático</h2>
+        <p id="status" role="status">Carregando imagens e TensorFlow.js…</p>
+        <label><input id="auto" type="checkbox" checked> IA joga por mim</label>
+        <label><input id="sound" type="checkbox"> Som dos acertos</label>
+        <button id="start" disabled>Iniciar partida</button>
+        <p id="result" role="status">Meta: acertar todas as toupeiras em 30 segundos.</p>
+        <dl><dt>Última inferência</dt><dd id="latency">—</dd><dt>Correspondência visual</dt><dd id="match">—</dd></dl>
+        <p class="hint">A IA recebe pixels, reconhece a toupeira e envia uma posição. No modo manual, clique ou use 1–9.</p>
+      </aside>
+    </div>
+    <footer>Baseado em <a href="https://github.com/jahidulislamzim/whack-a-mole">Whack-a-Mole, de Jahidul Islam Zim</a> · Detecção por comparação visual de templates.</footer>
+  </main>
+</body>
+</html>
